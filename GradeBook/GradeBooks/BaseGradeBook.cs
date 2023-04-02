@@ -11,6 +11,8 @@ namespace GradeBook.GradeBooks
 {
     public class BaseGradeBook
     {
+        public static readonly char[] LetterGrades = { 'A', 'B', 'C', 'D', 'F' };
+
         public string Name { get; set; }
         public List<Student> Students { get; set; }
         public GradeBookType Type { get; set; }
