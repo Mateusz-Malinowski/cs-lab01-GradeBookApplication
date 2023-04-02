@@ -15,7 +15,7 @@ namespace GradeBook.GradeBooks
 
         public override char GetLetterGrade(double averageGrade)
         {
-            if (Students.Count < LetterGrades.Length) throw new InvalidOperationException();
+            if (Students.Count < 5) throw new InvalidOperationException();
 
             uint countOfBetterStudents = 0;
             foreach (Student student in Students)
@@ -26,6 +26,28 @@ namespace GradeBook.GradeBooks
             uint gradeIndex = 0 + (uint)Math.Round(countOfGradesToDrop);
 
             return LetterGrades[gradeIndex];
+        }
+
+        public override void CalculateStatistics()
+        {
+            if (Students.Count < 5)
+            {
+                Console.Write("Ranked grading requires at least 5 students.");
+                return;
+            }
+
+            base.CalculateStatistics();
+        }
+
+        public override void CalculateStudentStatistics(string name)
+        {
+            if (Students.Count < 5)
+            {
+                Console.Write("Ranked grading requires at least 5 students.");
+                return;
+            }
+
+            base.CalculateStudentStatistics(name);
         }
     }
 }
