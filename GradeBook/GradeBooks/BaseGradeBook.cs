@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace GradeBook.GradeBooks
 {
-    public class BaseGradeBook
+    public abstract class BaseGradeBook
     {
         public static readonly char[] LetterGrades = { 'A', 'B', 'C', 'D', 'F' };
 
